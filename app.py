@@ -48,7 +48,7 @@ def send_email_webhook():
         
         <p>請點擊下方按鈕完成驗證，以確保您的電子信箱正確無誤：</p>
         
-        <a href="https://script.google.com/macros/s/AKfycbwwsunrV5QFirWPHQUYllLinK1Hhtz_p3nShl8KMxGSXtF6Ur7alD3StnRjt8XUgt9e/exec?token={token}&check=verify" 
+        <a href="https://script.google.com/macros/s/AKfycbzPzC_y6vCuvrQTTAZLKNIZFYxLm5ZW5ezkuNzTU3YfE7QEgfveaj7VpKd-06WAJho5/exec?token={token}&check=verify" 
            style="display: inline-block; background: #d32f2f; color: #ffffff; text-decoration: none; font-size: 18px; padding: 12px 20px; border-radius: 5px; margin-top: 20px; font-weight: bold;">
             ✅ 點這邊開通
         </a>
