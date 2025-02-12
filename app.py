@@ -42,7 +42,7 @@ def send_email_webhook():
         email_body = f"""
        <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; text-align: center; padding: 20px; margin: 0;">
     <div style="max-width: 600px; background: #ffffff; padding: 20px; margin: 0 auto; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
-        <h1 style="color: #d32f2f;">📩 驗證您的電子信箱</h1>
+        <h1 style="color: #d32f2f;">驗證您的電子信箱</h1>
         <p>感謝您報名領取 <strong>《拳擊學習大地圖》+《腳步指南》+《秘籍包》</strong>！💪🏆</p>
         <p>這些價值 <strong>899 美金</strong> 的學習資源，已經幫助無數專業選手與拳擊愛好者提升訓練效果。</p>
         
