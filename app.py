@@ -9,7 +9,7 @@ app = Flask(__name__)
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 GMAIL_USER = "booxing1999@gmail.com"
-GMAIL_PASSWORD = "fuckrex8787"  # **應用程式密碼**
+GMAIL_PASSWORD = "byln tiog ysgr pbgh"  # **應用程式密碼**
 
 # **🔹 發送 Email**
 def send_email(to_email, subject, body):
