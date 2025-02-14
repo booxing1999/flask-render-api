@@ -49,7 +49,7 @@ def send_email_webhook():
         
         <p>請點擊下方按鈕完成驗證，以確保您的電子信箱正確無誤：</p>
         
-        <a href="https://script.google.com/macros/s/AKfycbzue9GS4afxHj3AQ-UyG96JWp2V6QKz5iCGLoraeqyJckLJr_W3wfGpdErsmFG5YUyf/exec?token={token}&check=verify" 
+        <a href="https://script.google.com/macros/s/AKfycby1eGf3xC7o5PhORxajWA5_Dt6dqymF6UtUnpiRnzuogI3gLZO-ne2s_5YEEdatVKfz/exec?token={token}&check=verify" 
            style="display: inline-block; background: #d32f2f; color: #ffffff; text-decoration: none; font-size: 18px; padding: 12px 20px; border-radius: 5px; margin-top: 20px; font-weight: bold;">
             ✅ 點這邊開通
         </a>
