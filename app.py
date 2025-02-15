@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -30,6 +30,11 @@ def send_email(to_email, subject, body):
         print(f"✅ 郵件發送成功：{to_email}")
     except Exception as e:
         print(f"❌ 郵件發送失敗: {e}")
+
+# **🔹 index 路由**
+@app.route("/")
+def home():
+    return render_template("index.html")  # **讓 Flask 提供前端頁面**
 
 # **🔹 Flask API 路由**
 @app.route("/send_email", methods=["POST"])
