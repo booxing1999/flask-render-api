@@ -33,8 +33,10 @@ def send_email(to_email, subject, body):
 
 # **🔹 index 路由**
 @app.route("/")
-def home():
-    return render_template("index.html")  # **讓 Flask 提供前端頁面**
+def index():
+    return render_template("index.html", sheet_api=os.getenv("SHEET_API"))
+
+
 
 # **🔹 Flask API 路由**
 @app.route("/send_email", methods=["POST"])
