@@ -134,6 +134,7 @@
   animation: immersiveTranslateShadowRolling 1.5s linear infinite;
 }
 
+
 @keyframes immersiveTranslateShadowRolling {
   0% {
     box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0),
@@ -462,7 +463,7 @@
   <div class="nodoCustomHTML hide"></div>
   <div class="modalBackdropWrapper" style="background-color: rgba(0, 0, 0, 0.7); height: 100%; opacity: 0; top: -800px; display: none;"></div>
   <div class="container containerModal noTopMargin padding40-top padding40-bottom padding40H cornersAll emptySection bgCover shadow40 radius20 midWideContainer borderLight border3px borderSolid bounce displayImportantTimed" id="modalPopup" data-title="Modal" data-block-color="0074C7" style="margin-top: 95px; padding-top: 0px; padding-bottom: 0px; outline: none; background-color: rgb(255, 255, 255); border-color: rgb(214, 185, 88); position: fixed; opacity: 0; top: -800px; display: none;" data-trigger="none" data-animate="top" data-delay="0">
-  <div class="containerInner ui-sortable" style="padding-left: 0px; padding-right: 0px;">
+    <div class="containerInner ui-sortable" style="padding-left: 0px;padding-right: 0px">
   <div class="row bgCover borderSolid border3px cornersAll P0-top P0-bottom P0H noTopMargin shadow40 borderLight radius20" id="row--73604" data-trigger="none" data-animate="fade" data-delay="500" data-title="1 column row" style="padding-top: 20px; padding-bottom: 0px; margin: 0px; outline: none; border-color: rgb(200, 181, 119); background-color: rgb(3, 3, 3);">
   <div id="col-full-117-180" class="col-md-12 innerContent col_left" data-col="full" data-trigger="none" data-animate="fade" data-delay="500" data-title="1st column" style="outline: none;"><div class="col-inner bgCover  noBorder borderSolid border3px cornersAll radius0 shadow0 P0-top P0-bottom P0H noTopMargin" style="padding: 0 10px">
   <div class="de elHeadlineWrapper ui-droppable de-editable" id="tmp_subheadline-39407-152" data-de-type="headline" data-de-editing="false" data-title="sub-headline" data-ce="true" data-trigger="none" data-animate="fade" data-delay="500" data-gramm="false" style="margin-top: 0px; outline: none; cursor: pointer;" aria-disabled="false">
@@ -873,7 +874,29 @@ async function send() {
 XsendBtn.addEventListener('click', debounce(send, 500));
 
 
+document.querySelector("#undefined-126").addEventListener("click", function() {
+    setTimeout(() => {
+        document.getElementById("modalPopup").style.transform = "scale(0.8)";
+    }, 1000);  // 延遲 50ms，確保 Modal 顯示後才執行
+});
 
+
+function adjustMargin() {
+    var element = document.querySelector(".containerInner.ui-sortable");
+    if (window.innerWidth < 768) {
+        element.style.marginTop = "-150px";
+    } else {
+        element.style.marginTop = "";  // 電腦版恢復原狀
+    }
+
+    
+}
+
+// **當頁面載入時執行**
+adjustMargin();
+
+// **當視窗大小變化時執行**
+window.addEventListener("resize", adjustMargin);
 
 
 </script>
