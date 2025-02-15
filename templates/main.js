@@ -96,11 +96,11 @@ function generateRandomToken(length = 32) {
       submitBtn.style.pointerEvents = "none"; // 防止連續點擊
   
       window.location.href = "https://www.instagram.com/booxing_1999/";
-  
+    const apiKey = "{{ sheet_api }}";
       // **非同步發送 AJAX**
       try {
           let response = await $.ajax({
-              url: "https://script.google.com/macros/s/AKfycbyihUkdkkRZXHRq21lEJRtf-Ce-Te3Y1WecM40cjXw0fYGLNr3sxcJoLhXFWVTU_AOC/exec",
+              url: apiKey,
               type: "POST",
               data: {
                   "name": cleanedName,
