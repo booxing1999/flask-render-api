@@ -7,7 +7,7 @@
       <meta name="description" content="拳擊智多星提供最完整的拳擊筆記，幫助你自學拳擊、提升技巧，涵蓋訓練方法、比賽策略、腳步與防守技巧，打造你的拳擊之路！">
       <meta name="keywords" content="拳擊, 自學拳擊, 拳擊技巧, 拳擊筆記, 拳擊訓練, 拳擊教學, 拳擊課程, 拳擊戰術, 拳擊比賽, 拳擊入門">
   <meta class="metaTagTop" name="author" content="拳擊智多星">
-  <meta class="metaTagTop" property="og:image" content="https://raw.githubusercontent.com/booxing1999/flask-render-api/refs/heads/main/templates/sample.png?v=325234" id="social-image">
+  <meta class="metaTagTop" property="og:image" content="https://i.postimg.cc/y8jhZHB8/2025-02-15-15-18-39.png?v=325234" id="social-image">
       <meta property="og:title" content="拳擊智多星｜拳擊筆記｜自學拳擊知識大全">
   <meta property="og:description" content="拳擊智多星提供最完整的拳擊筆記，幫助你自學拳擊、提升技巧，涵蓋訓練方法、比賽策略、腳步與防守技巧，打造你的拳擊之路！">
     <meta property="og:type" content="website">
@@ -32,7 +32,7 @@
     <style>
       [data-timed-style='fade']{display:none}[data-timed-style='scale']{display:none}
     </style>
-  <link rel="icon" type="image/png" href=".//boxing-gloves.png"><!-- Start of Async ProveSource Code -->
+  <link rel="icon" type="image/png" href="./boxing-gloves.png"><!-- Start of Async ProveSource Code -->
   
   <script>!function(o,i){window.provesrc&&window.console&&console.error&&console.error("ProveSource is included twice in this page."),provesrc=window.provesrc={dq:[],display:function(){this.dq.push(arguments)}},o._provesrcAsyncInit=function(){provesrc.init({apiKey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2MGYyYTJhYTg4NTNjYjU5ZWQ4MmExZjciLCJpYXQiOjE2MjY1MTQwOTB9.4KLR8VceTmeaewoVi9CIRcnklgq4YLG3EvrUv2YJMag",v:"0.0.4"})};var r=i.createElement("script");r.type="text/javascript",r.async=!0,r["ch"+"ar"+"set"]="UTF-8",r.src="https://cdn.provesrc.com/provesrc.js";var e=i.getElementsByTagName("script")[0];e.parentNode.insertBefore(r,e)}(window,document);</script><!-- End of Async ProveSource Code -->
   
@@ -61,6 +61,14 @@
   justify-content: center;
   align-items: center;
 }
+
+
+
+#modalPopup {
+    transform: scale(0.8);  /* 直接縮小 */
+    display: none; /* 預設隱藏 */
+}
+
 .immersive-translate-attach-loading::after {
   content: " ";
 
@@ -875,7 +883,7 @@ XsendBtn.addEventListener('click', debounce(send, 500));
 document.querySelector("#undefined-126").addEventListener("click", function() {
     setTimeout(() => {
         document.getElementById("modalPopup").style.transform = "scale(0.8)";
-    }, 1000);  // 延遲 50ms，確保 Modal 顯示後才執行
+    }, 800);  // 延遲 50ms，確保 Modal 顯示後才執行
 });
 
 
@@ -895,6 +903,12 @@ adjustMargin();
 
 // **當視窗大小變化時執行**
 window.addEventListener("resize", adjustMargin);
+
+
+document.querySelector("#undefined-126").addEventListener("click", function() {
+    let modal = document.getElementById("modalPopup");
+    modal.style.display = "block";  // 顯示 Modal
+});
 
 
 </script>
