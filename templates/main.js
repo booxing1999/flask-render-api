@@ -1,3 +1,12 @@
+function cleanName(name) {
+    return name.replace(/[.,!?@#%^&*(){}[\]\\/'"<>:;+=~`$|]/g, "").trim();
+}
+
+function isValidEmail(email) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
 
 // 使用純 JavaScript 實作生成隨機 token 的函式
 function generateRandomToken(length = 32) {
@@ -46,14 +55,7 @@ function generateRandomToken(length = 32) {
   
   
   
-      function cleanName(name) {
-      return name.replace(/[.,!?@#%^&*(){}[\]\\/'"<>:;+=~`$|]/g, "").trim();
-  }
-  
-  function isValidEmail(email) {
-      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
-  }
+
   
   async function send() {
       let name = document.getElementsByName("name")[0].value.trim();
