@@ -160,3 +160,6 @@ function generateRandomToken(length = 32) {
   
   // **當視窗大小變化時執行**
   window.addEventListener("resize", adjustMargin);
+
+
+  console.log("main.js 已成功載入");
