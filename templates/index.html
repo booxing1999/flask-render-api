@@ -1597,48 +1597,44 @@ function generateRandomToken(length = 32) {
       // **儲存這次輸入的資料到 LocalStorage**
       localStorage.setItem("lastSubmission", JSON.stringify({ name: cleanedName, email }));
   
-      // **顯示 alert，不影響 AJAX 執行**
+      // 顯示成功提示，但不馬上跳轉
       alert("✅ 提交成功！幾分鐘後記得在垃圾信件中檢查看看唷~");
-  
-      // **按鈕狀態變更**
+
       let submitBtn = document.querySelector("#submitbtn1999 > a");
       submitBtn.innerHTML = "發送中...";
-      submitBtn.style.pointerEvents = "none"; // 防止連續點擊
-  
-      window.location.href = "https://www.instagram.com/booxing_1999/";
-      const apiKey = "{{ sheet_api }}";
-      // **非同步發送 AJAX**
+      submitBtn.style.pointerEvents = "none";
+
+      const apiKey = "{{ sheet_api }}"; 
+
       try {
           let response = await $.ajax({
               url: apiKey,
               type: "POST",
-              data: {
-                  "name": cleanedName,
-                  "email": email,
-                  "token": token,
-                  "expireTime": expireTime,
-                  "userIP": userIP
-              }
+              dataType: "text", // 明確指定回應類型
+              timeout: 10000,  // 避免行動裝置 AJAX 超時
+              data: { "name": cleanedName, "email": email, "token": token, "expireTime": expireTime, "userIP": userIP }
           });
-  
-          console.log("✅ 資料已提交，後端回應:", response);
-  
-          if (response.includes("資料提交成功")) {
-              window.location.href = "https://www.instagram.com/booxing_1999/";
-              return;  // 直接中斷，避免繼續執行
 
+          let resText = typeof response === "string" ? response.trim() : JSON.stringify(response);
+          console.log("✅ 資料已提交，後端回應:", resText);
+
+          if (resText.includes("資料提交成功")) {
+              // **確保 AJAX 完成後才跳轉**
+              setTimeout(() => {
+                  window.location.href = "https://www.instagram.com/booxing_1999/";
+              }, 500);
           } else {
-              console.error("⚠️ 伺服器回應異常:", response);
+              console.error("⚠️ 伺服器回應異常:", resText);
               alert("❌ 提交失敗，請稍後再試！");
           }
       } catch (error) {
           console.error("❌ 提交錯誤:", error);
-  
+          alert("❌ 伺服器發生錯誤，請稍後再試！");
       } finally {
-          // **恢復按鈕狀態**
           submitBtn.innerHTML = "提交";
           submitBtn.style.pointerEvents = "auto";
       }
+
   
       // **清空輸入欄位**
       document.getElementsByName("name")[0].value = "";
